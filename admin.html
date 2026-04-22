@@ -19,26 +19,40 @@
     </style>
 </head>
 <body>
+
     <div class="admin-container">
-        <div class="admin-card">
-            <h2 style="margin-bottom: 20px; color: #d4af37;">Menü Yönetimi</h2>
-            
-            <label>1. Yemek Adı</label>
-            <input type="text" id="yemek1" placeholder="Örn: Osmancık Pilavı">
-            <label>1. Yemek Açıklaması</label>
-            <textarea id="desc1" placeholder="Örn: Tane tane, tam kıvamında..."></textarea>
-
-            <hr style="border: 0.5px solid #333; margin-bottom: 20px;">
-
-            <label>2. Yemek Adı</label>
-            <input type="text" id="yemek2" placeholder="Örn: Kuru Fasulye">
-            <label>2. Yemek Açıklaması</label>
-            <textarea id="desc2" placeholder="Örn: Etli ve özel soslu..."></textarea>
-
-            <button onclick="saveMenu()" class="save-btn">GÜNCELLE VE YAYINLA</button>
-            <p id="status" style="margin-top: 15px; color: green; display: none;">Menü başarıyla güncellendi!</p>
-        </div>
+    <h2>Yemek Listesini Güncelle</h2>
+    <form id="add-food-form">
+        <input type="text" id="food-name" placeholder="Yemek Adı (Örn: İskilip Dolması)" required>
+        <textarea id="food-desc" placeholder="Yemek Açıklaması" required></textarea>
+        <input type="number" id="food-price" placeholder="Fiyatı (TL)" required>
+        <button type="submit">Listeye Ekle</button>
+    </form>
+    <hr>
+    <div id="admin-menu-preview">
+        <h3>Mevcut Menü</h3>
+        <ul id="admin-food-list"></ul>
     </div>
+</div>
+
+
+
+
+
+    <div class="admin-card">
+    <h2 style="margin-bottom: 20px; color: #d4af37;">Menü Yönetimi</h2>
+
+    <label>1. Yemek Adı</label>
+    <input type="text" id="food-name" placeholder="Örn: Osmancık Pilavı">
+    <label>1. Yemek Açıklaması</label>
+    <textarea id="food-desc" placeholder="Örn: Tane tane, tam kıvamında..."></textarea>
+    
+    <label>Fiyat</label>
+    <input type="number" id="food-price" placeholder="Örn: 150">
+
+    <button onclick="saveMenu()" class="save-btn">GÜNCELLE VE YAYINLA</button>
+    <p id="status" style="margin-top: 15px; color: green; display: none;">Menü başarıyla güncellendi!</p>
+</div>
 
     <script>
         function saveMenu() {
@@ -58,10 +72,10 @@
 
 
 
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="script.js"></script>
 
-<script src="script.js"></script>
 
 
 

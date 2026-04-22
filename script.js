@@ -34,3 +34,33 @@ if (menuList) {
         }
     });
 }
+
+// Admin Panelinden Yemek Ekleme
+
+
+function saveMenu() {
+    const ad = document.getElementById('food-name').value;
+    const aciklama = document.getElementById('food-desc').value;
+    const fiyat = document.getElementById('food-price').value;
+    const status = document.getElementById('status');
+
+    if (ad && aciklama && fiyat) {
+        database.ref('menu').push({
+            ad: ad,
+            aciklama: aciklama,
+            fiyat: fiyat
+        }).then(() => {
+            status.style.display = 'block';
+            // Formu temizle
+            document.getElementById('food-name').value = '';
+            document.getElementById('food-desc').value = '';
+            document.getElementById('food-price').value = '';
+            
+            setTimeout(() => { status.style.display = 'none'; }, 3000);
+        }).catch((error) => {
+            alert("Hata: " + error.message);
+        });
+    } else {
+        alert("Lütfen tüm alanları doldurun!");
+    }
+}
