@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    width: 100%;
+}
+
+.hero-overlay span {
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    color: #d4af37; /* Altın rengi vurgu */
+}
+
+.hero-overlay h1 {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.btn-main:hover {
+    background: white;
+    color: black;
+}
+
+/* İçerik Alanları */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    padding: 30px;
+    border-bottom: 4px solid #d4af37;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.dark {
+    background: #050505;
+}
+
+/* Mobil Ayarı */
+@media (max-width: 768px) {
+    .navbar { padding: 15px; }
+    nav ul { display: none; } /* Mobilde menüyü sadeleştirdik */
+}
+
+.contact-minimal {
+    padding: 60px 5%;
+    text-align: center;
+    background: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
+}
+
+.contact-header {
+    margin-bottom: 40px;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Ortak Buton Stili */
+.action-btn, .direction-btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sosyal Medya Butonları */
+.action-btn {
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 5px;
+}
+
+.action-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* Yol Tarifi Butonu (Daha Belirgin) */
+.direction-btn {
+    background: #d4af37;
+    color: black;
+    font-weight: 800;
+    border-radius: 5px;
+}
+
+.direction-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.social-group {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-details {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.contact-details p {
+    margin: 5px 0;
+}
+
+.contact-details a {
+    color: #666;
+    text-decoration: none;
+}
+
+
+
+.hours-item {
+    margin-bottom: 15px;
+    color: #d4af37; /* Saatleri altın sarısı yaparak dikkat çekelim */
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-details p {
+    color: #888; /* Adres ve telefon bir tık daha sönük kalsın ki saatler öne çıksın */
+}
+
+/* Mobil için hizalama */
+@media (max-width: 600px) {
+    .contact-actions {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+

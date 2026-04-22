@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ooz Usta | Admin Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container { padding: 100px 10%; max-width: 600px; margin: 0 auto; }
+        .admin-card { background: #111; padding: 30px; border-radius: 15px; border: 1px solid #d4af37; }
+        input, textarea { 
+            width: 100%; padding: 12px; margin-top: 10px; margin-bottom: 20px;
+            background: #222; border: 1px solid #333; color: white; border-radius: 5px;
+        }
+        .save-btn { 
+            background: #d4af37; color: black; border: none; padding: 15px; 
+            width: 100%; font-weight: 800; cursor: pointer; border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-card">
+            <h2 style="margin-bottom: 20px; color: #d4af37;">Menü Yönetimi</h2>
+            
+            <label>1. Yemek Adı</label>
+            <input type="text" id="yemek1" placeholder="Örn: Osmancık Pilavı">
+            <label>1. Yemek Açıklaması</label>
+            <textarea id="desc1" placeholder="Örn: Tane tane, tam kıvamında..."></textarea>
+
+            <hr style="border: 0.5px solid #333; margin-bottom: 20px;">
+
+            <label>2. Yemek Adı</label>
+            <input type="text" id="yemek2" placeholder="Örn: Kuru Fasulye">
+            <label>2. Yemek Açıklaması</label>
+            <textarea id="desc2" placeholder="Örn: Etli ve özel soslu..."></textarea>
+
+            <button onclick="saveMenu()" class="save-btn">GÜNCELLE VE YAYINLA</button>
+            <p id="status" style="margin-top: 15px; color: green; display: none;">Menü başarıyla güncellendi!</p>
+        </div>
+    </div>
+
+    <script>
+        function saveMenu() {
+            const data = {
+                y1: document.getElementById('yemek1').value,
+                d1: document.getElementById('desc1').value,
+                y2: document.getElementById('yemek2').value,
+                d2: document.getElementById('desc2').value
+            };
+            // Veriyi tarayıcı hafızasına (Local Storage) kaydediyoruz
+            localStorage.setItem('oozUstaMenu', JSON.stringify(data));
+            
+            document.getElementById('status').style.display = 'block';
+            setTimeout(() => { location.href = 'index.html'; }, 1500);
+        }
+    </script>
+</body>
+</html>

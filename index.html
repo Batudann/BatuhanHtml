@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ooz Usta Osmancık Esnaf Lokantası - Yöresel lezzetler ve ev yemekleri.">
+    <title>Ooz Usta | Osmancık Esnaf Lokantası</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">OOZ USTA</div>
+        <nav>
+            <ul>
+                <li><a href="#menu">Lezzetler</a></li>
+                <li><a href="#iletisim">Konum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-chef-preparing-a-meal-in-a-professional-kitchen-856-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <span>OSMANCIK'IN KALBİNDE</span>
+            <h1>GERÇEK ESNAF MUTFAĞI</h1>
+            <a href="#menu" class="btn-main">MENÜYÜ KEŞFET</a>
+        </div>
+    </section>
+
+    <section id="menu" class="section">
+        <h2 class="section-title">Günün Lezzetleri</h2>
+        <div class="menu-container">
+            <div class="card">
+                <h3>Osmancık Pilavı</h3>
+                <p>Yöresel pirinç ile tane tane.</p>
+            </div>
+            <div class="card">
+                <h3>Kuru Fasulye</h3>
+                <p>Ooz Usta'nın özel tarifiyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="contact-minimal">
+    <div class="container">
+        <div class="contact-header">
+            <span class="sub-title">İLETİŞİM</span>
+            <h2>Bize Ulaşın</h2>
+        </div>
+
+        <div class="contact-actions">
+            <div class="social-group">
+                <a href="https://www.instagram.com/oozustaa/" target="_blank" class="action-btn">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.tiktok.com/@oozusta" target="_blank" class="action-btn">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+            </div>
+
+            <div class="maps-group">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Osmancık,Çorum" target="_blank" class="direction-btn">
+                    <i class="fas fa-location-arrow"></i> Yol Tarifi Al
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-details">
+            <div class="contact-details">
+    <div class="hours-item">
+        <i class="far fa-clock"></i>
+        <span>Hafta İçi: 08:00 - 20:00 / Cumartesi: 09:00 - 18:00</span>
+    </div>
+    <p><i class="fas fa-map-marker-alt"></i> Osmancık, Çorum</p>
+    <p><i class="fas fa-phone"></i> <a href="tel:05000000000">0500 000 00 00</a></p>
+</div>
+        
+    
+</section>
+
+
+
+<script>
+    window.onload = function() {
+        const savedMenu = localStorage.getItem('oozUstaMenu');
+        if (savedMenu) {
+            const data = JSON.parse(savedMenu);
+            // Menüdeki ilgili yerleri bul ve güncelle
+            // Kartların içine id vermen gerekecek, aşağıda belirttim
+            if(data.y1) document.querySelector('.menu-container .card:nth-child(1) h3').innerText = data.y1;
+            if(data.d1) document.querySelector('.menu-container .card:nth-child(1) p').innerText = data.d1;
+            if(data.y2) document.querySelector('.menu-container .card:nth-child(2) h3').innerText = data.y2;
+            if(data.d2) document.querySelector('.menu-container .card:nth-child(2) p').innerText = data.d2;
+        }
+    }
+</script>
+
+
+</body>
+</html>
