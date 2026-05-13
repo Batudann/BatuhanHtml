@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ooz Usta Osmancık Esnaf Lokantası - Yöresel lezzetler ve ev yemekleri.">
+    <meta name="description" content="Osmancık'ın en iyi esnaf lokantası Ooz Usta | Günlük taze ev yemekleri, Osmancık pilavı ve yöresel lezzetler. Hafta içi 08:00–20:00, Cumartesi 09:00–18:00 açık.">
+    <meta property="og:title" content="Ooz Usta | Osmancık Esnaf Lokantası">
+    <meta property="og:description" content="Osmancık'ın en iyi esnaf lokantası. Günlük taze ev yemekleri ve yöresel lezzetler.">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://batuhan-html.vercel.app">
+    <link rel="canonical" href="https://batuhan-html.vercel.app">
     <title>Ooz Usta | Osmancık Esnaf Lokantası</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
@@ -82,7 +87,7 @@
         <span>Hafta İçi: 08:00 - 20:00 / Cumartesi: 09:00 - 18:00</span>
     </div>
     <p><i class="fas fa-map-marker-alt"></i> Osmancık, Çorum</p>
-    <p><i class="fas fa-phone"></i> <a href="tel:05000000000">0500 000 00 00</a></p>
+    <p><i class="fas fa-phone"></i> <a href="tel:0542 123 19 61">0542 123 19 61</a></p>
 </div>
         
     
@@ -124,6 +129,45 @@
     navMenu.classList.remove('open');
   }
 </script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Ooz Usta Osmancık Esnaf Lokantası",
+  "description": "Osmancık'ın en iyi esnaf lokantası. Günlük taze ev yemekleri ve yöresel lezzetler.",
+  "url": "https://batuhan-html.vercel.app",
+  "telephone": "0542 123 19 61",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Osmancık",
+    "addressRegion": "Çorum",
+    "addressCountry": "TR"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "servesCuisine": "Türk Mutfağı",
+  "priceRange": "₺",
+  "sameAs": [
+    "https://www.instagram.com/oozustaa/",
+    "https://www.tiktok.com/@oozusta"
+  ]
+}
+</script>
+
 
 
 </body>
