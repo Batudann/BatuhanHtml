@@ -239,9 +239,22 @@ nav a {
 }
 
 .social-group {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-group .action-btn {
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .social-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .contact-details {
