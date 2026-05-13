@@ -170,7 +170,9 @@ nav a {
 }
 
 /* Masaüstünde hamburger gizli */
-.hamburger { display: none; }
+@media (min-width: 769px) {
+  .hamburger { display: none; }
+}
 
 .contact-minimal {
     padding: 60px 5%;
