@@ -230,7 +230,7 @@ nav a {
   background: #d4af37;
   color: black;
   font-weight: 800;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .direction-btn:hover {
@@ -287,7 +287,7 @@ nav a {
 .whatsapp-btn {
   color: #25D366;
   border: 1px solid rgba(37, 211, 102, 0.3);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .whatsapp-btn:hover {
   background: rgba(37, 211, 102, 0.1);
