@@ -1,87 +1,120 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ooz Usta | Admin Paneli</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .admin-container { padding: 100px 10%; max-width: 600px; margin: 0 auto; }
-        .admin-card { background: #111; padding: 30px; border-radius: 15px; border: 1px solid #d4af37; }
-        input, textarea { 
-            width: 100%; padding: 12px; margin-top: 10px; margin-bottom: 20px;
-            background: #222; border: 1px solid #333; color: white; border-radius: 5px;
-        }
-        .save-btn { 
-            background: #d4af37; color: black; border: none; padding: 15px; 
-            width: 100%; font-weight: 800; cursor: pointer; border-radius: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ooz Usta | Admin Paneli</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-container {
+      padding: 100px 10%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .admin-card {
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid #d4af37;
+    }
+    .admin-card h2 {
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      background: #222;
+      border: 1px solid #333;
+      color: white;
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+    }
+    textarea { height: 80px; resize: vertical; }
+    .save-btn {
+      background: #d4af37;
+      color: black;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      font-weight: 800;
+      cursor: pointer;
+      border-radius: 5px;
+      letter-spacing: 1px;
+    }
+    .save-btn:hover { opacity: 0.9; }
+    #status {
+      margin-top: 15px;
+      color: #1D9E75;
+      display: none;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="admin-container">
-    <h2>Yemek Listesini Güncelle</h2>
-    <form id="add-food-form">
-        <input type="text" id="food-name" placeholder="Yemek Adı (Örn: İskilip Dolması)" required>
-        <textarea id="food-desc" placeholder="Yemek Açıklaması" required></textarea>
-        <input type="number" id="food-price" placeholder="Fiyatı (TL)" required>
-        <button type="submit">Listeye Ekle</button>
-    </form>
-    <hr>
-    <div id="admin-menu-preview">
-        <h3>Mevcut Menü</h3>
-        <ul id="admin-food-list"></ul>
-    </div>
-</div>
-
-
-
-
-
+  <div class="admin-container">
     <div class="admin-card">
-    <h2 style="margin-bottom: 20px; color: #d4af37;">Menü Yönetimi</h2>
+      <h2>Menü Yönetimi</h2>
 
-    <label>1. Yemek Adı</label>
-    <input type="text" id="food-name" placeholder="Örn: Osmancık Pilavı">
-    <label>1. Yemek Açıklaması</label>
-    <textarea id="food-desc" placeholder="Örn: Tane tane, tam kıvamında..."></textarea>
-    
-    <label>Fiyat</label>
-    <input type="number" id="food-price" placeholder="Örn: 150">
+      <label>1. Yemek Adı</label>
+      <input type="text" id="food-name-1" placeholder="Örn: Osmancık Pilavı">
 
-    <button onclick="saveMenu()" class="save-btn">GÜNCELLE VE YAYINLA</button>
-    <p id="status" style="margin-top: 15px; color: green; display: none;">Menü başarıyla güncellendi!</p>
-</div>
+      <label>1. Yemek Açıklaması</label>
+      <textarea id="food-desc-1" placeholder="Örn: Tane tane, tam kıvamında..."></textarea>
 
-    <script>
-        function saveMenu() {
-            const data = {
-                y1: document.getElementById('yemek1').value,
-                d1: document.getElementById('desc1').value,
-                y2: document.getElementById('yemek2').value,
-                d2: document.getElementById('desc2').value
-            };
-            // Veriyi tarayıcı hafızasına (Local Storage) kaydediyoruz
-            localStorage.setItem('oozUstaMenu', JSON.stringify(data));
-            
-            document.getElementById('status').style.display = 'block';
-            setTimeout(() => { location.href = 'index.html'; }, 1500);
-        }
-    </script>
+      <label>2. Yemek Adı</label>
+      <input type="text" id="food-name-2" placeholder="Örn: Kuru Fasulye">
 
+      <label>2. Yemek Açıklaması</label>
+      <textarea id="food-desc-2" placeholder="Örn: Ooz Usta'nın özel tarifiyle..."></textarea>
 
+      <button onclick="saveMenu()" class="save-btn">GÜNCELLE VE YAYINLA</button>
+      <p id="status">✓ Menü başarıyla güncellendi!</p>
+    </div>
+  </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="script.js"></script>
+  <script>
+    // Sayfa açılınca mevcut verileri forma yükle
+    window.onload = function () {
+      const saved = localStorage.getItem('oozUstaMenu');
+      if (saved) {
+        const data = JSON.parse(saved);
+        if (data.y1) document.getElementById('food-name-1').value = data.y1;
+        if (data.d1) document.getElementById('food-desc-1').value = data.d1;
+        if (data.y2) document.getElementById('food-name-2').value = data.y2;
+        if (data.d2) document.getElementById('food-desc-2').value = data.d2;
+      }
+    }
 
+    function saveMenu() {
+      const data = {
+        y1: document.getElementById('food-name-1').value,
+        d1: document.getElementById('food-desc-1').value,
+        y2: document.getElementById('food-name-2').value,
+        d2: document.getElementById('food-desc-2').value
+      };
 
+      if (!data.y1 || !data.y2) {
+        alert('Lütfen en az her iki yemek adını doldurun!');
+        return;
+      }
 
+      localStorage.setItem('oozUstaMenu', JSON.stringify(data));
 
-
-
-
-
+      const status = document.getElementById('status');
+      status.style.display = 'block';
+      setTimeout(() => {
+        status.style.display = 'none';
+        location.href = 'index.html';
+      }, 1500);
+    }
+  </script>
 </body>
 </html>

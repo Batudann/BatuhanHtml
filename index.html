@@ -12,14 +12,19 @@
 <body>
 
     <header class="navbar">
-        <div class="logo">OOZ USTA</div>
-        <nav>
-            <ul>
-                <li><a href="#menu">Lezzetler</a></li>
-                <li><a href="#iletisim">Konum</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="logo">OOZ USTA</div>
+  <nav>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
+      <li><a href="#menu" onclick="closeMenu()">Lezzetler</a></li>
+      <li><a href="#iletisim" onclick="closeMenu()">Konum</a></li>
+    </ul>
+  </nav>
+</header>
 
     <section class="hero">
         <video autoplay muted loop playsinline class="bg-video">
@@ -106,6 +111,19 @@
 
 <script src="script.js"></script>
 
+
+    <script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+
+  function closeMenu() {
+    navMenu.classList.remove('open');
+  }
+</script>
 
 
 </body>
