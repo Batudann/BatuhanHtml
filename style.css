@@ -240,8 +240,7 @@ nav a {
 
 .social-group {
     display: flex;
-    gap: 160px;
-    
+    gap: 15px;
 }
 
 .contact-details {
