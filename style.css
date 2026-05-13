@@ -210,7 +210,7 @@ nav a {
 .action-btn {
     color: #d4af37;
     border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .action-btn:hover {
@@ -219,20 +219,29 @@ nav a {
 
 /* Yol Tarifi Butonu (Daha Belirgin) */
 .direction-btn {
-    background: #d4af37;
-    color: black;
-    font-weight: 800;
-    border-radius: 5px;
+  text-decoration: none;
+  padding: 12px 25px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #d4af37;
+  color: black;
+  font-weight: 800;
+  border-radius: 10px;
 }
 
 .direction-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
 .social-group {
     display: flex;
-    gap: 15px;
+    gap: 160px;
+    
 }
 
 .contact-details {
@@ -273,6 +282,15 @@ nav a {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+.whatsapp-btn {
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 10px;
+}
+.whatsapp-btn:hover {
+  background: rgba(37, 211, 102, 0.1);
 }
 
 
