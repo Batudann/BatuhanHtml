@@ -241,6 +241,7 @@ nav a {
 .social-group {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .contact-details {
