@@ -195,7 +195,7 @@ nav a {
 }
 
 /* Ortak Buton Stili */
-.action-btn, .direction-btn {
+.direction-btn {
     text-decoration: none;
     padding: 12px 25px;
     font-size: 0.9rem;
@@ -211,7 +211,20 @@ nav a {
     color: #d4af37;
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 10px;
+    flex: 1 1 160px;
+    max-width: 180px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
 
 .action-btn:hover {
     background: rgba(212, 175, 55, 0.1);
@@ -239,6 +252,10 @@ nav a {
 }
 
 .social-group {
+    flex: 1 1 160px;
+    max-width: 180px;
+    justify-content: center;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -248,12 +265,7 @@ nav a {
 
 }
 
-.social-group .action-btn {
-    flex: 1 1 160px;
-    max-width: 180px;
-    justify-content: center;
-    text-align: center;
-}
+
 
 @media (max-width: 500px) {
     .social-group {
@@ -269,6 +281,7 @@ nav a {
 
 .contact-details p {
     margin: 5px 0;
+     color: #888; /* Adres ve telefon bir tık daha sönük kalsın ki saatler öne çıksın */
 }
 
 .contact-details a {
@@ -289,9 +302,6 @@ nav a {
     gap: 10px;
 }
 
-.contact-details p {
-    color: #888; /* Adres ve telefon bir tık daha sönük kalsın ki saatler öne çıksın */
-}
 
 /* Mobil için hizalama */
 @media (max-width: 600px) {
@@ -306,9 +316,116 @@ nav a {
   border: 1px solid rgba(37, 211, 102, 0.3);
   border-radius: 5px;
 }
+
 .whatsapp-btn:hover {
   background: rgba(37, 211, 102, 0.1);
 }
 
 
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0a0a0a;
+    font-family:Arial, sans-serif;
+    color:white;
+}
+
+.test{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#050505;
+    border-top:1px solid rgba(212,175,55,0.15);
+    padding:70px 10% 25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.footer::before{
+    content:"";
+    position:absolute;
+    top:-100px;
+    left:50%;
+    transform:translateX(-50%);
+    width:300px;
+    height:300px;
+    background:rgba(212,175,55,0.06);
+    filter:blur(120px);
+}
+
+.footer-content{
+    position:relative;
+    z-index:1;
+    display:flex;
+    justify-content:space-between;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.footer-box{
+    flex:1;
+    min-width:220px;
+}
+
+.footer-box h3,
+.footer-box h4{
+    color:#d4af37;
+    margin-bottom:18px;
+}
+
+.footer-box p{
+    color:#888;
+    line-height:1.8;
+}
+
+.footer-box a{
+    display:block;
+    color:#777;
+    text-decoration:none;
+    margin-bottom:12px;
+    transition:0.3s;
+}
+
+.footer-box a:hover{
+    color:#d4af37;
+    transform:translateX(6px);
+}
+
+.footer-bottom{
+    margin-top:50px;
+    padding-top:20px;
+    border-top:1px solid #1a1a1a;
+    text-align:center;
+}
+
+.footer-bottom p{
+    color:#555;
+}
+
+/* Mobil */
+
+@media(max-width:768px){
+
+    .footer-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-box a:hover{
+        transform:none;
+    }
+}
 

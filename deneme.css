@@ -1,0 +1,198 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0a0a0a;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+.content{
+  height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* FOOTER */
+
+.footer{
+  background:#050505;
+  border-top:1px solid rgba(212,175,55,0.15);
+  padding:70px 10% 25px;
+  margin-top:50px;
+  position:relative;
+  overflow:hidden;
+}
+
+.footer::before{
+  content:"";
+  position:absolute;
+  top:-120px;
+  left:50%;
+  transform:translateX(-50%);
+  width:300px;
+  height:300px;
+  background:rgba(212,175,55,0.06);
+  filter:blur(120px);
+}
+
+.footer-content{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.footer-box{
+  flex:1;
+  min-width:220px;
+}
+
+.footer-box h3,
+.footer-box h4{
+  color:#d4af37;
+  margin-bottom:15px;
+}
+
+.footer-box p{
+  color:#888;
+  line-height:1.7;
+  margin-bottom:8px;
+}
+
+.footer-box a{
+  display:block;
+  color:#777;
+  text-decoration:none;
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+.footer-box a:hover{
+  color:#d4af37;
+  transform:translateX(6px);
+}
+
+
+/* Sosyal Medya Butonları */
+.action-btn {
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    max-width: 180px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 45px;
+    height: auto;
+
+}
+
+
+.whatsapp-btn {
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 5px;
+}
+
+
+/* SOCIAL BUTTONS */
+
+.social-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.social-group .action-btn {
+  width: 160px;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+
+.social-btn{
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:0.85rem;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.1);
+  color:#ccc;
+  transition:0.3s;
+}
+
+/* WhatsApp */
+.social-btn.whatsapp{
+  border-color:rgba(37,211,102,0.4);
+}
+.social-btn.whatsapp:hover{
+  color:#25D366;
+  background:rgba(37,211,102,0.1);
+  transform:translateY(-2px);
+}
+
+/* Instagram */
+.social-btn.instagram{
+  border-color:rgba(212,175,55,0.4);
+}
+.social-btn.instagram:hover{
+  color:#d4af37;
+  background:rgba(212,175,55,0.1);
+  transform:translateY(-2px);
+}
+
+/* TikTok */
+.social-btn.tiktok{
+  border-color:rgba(255,255,255,0.2);
+}
+.social-btn.tiktok:hover{
+  color:#fff;
+  background:rgba(255,255,255,0.05);
+  transform:translateY(-2px);
+}
+
+/* bottom */
+
+.footer-bottom{
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #1a1a1a;
+  text-align:center;
+}
+
+.footer-bottom p{
+  color:#555;
+  font-size:0.85rem;
+}
+
+/* mobile */
+
+@media(max-width:768px){
+  .footer-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-box a:hover{
+    transform:none;
+  }
+}
