@@ -12,7 +12,7 @@ const firebaseConfig = {
 
 // Firebase'i Başlat
 firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const database = typeof firebase.database === 'function' ? firebase.database() : null;
 
 // Menü Verilerini Firebase'den Çek ve Sayfada Göster
 const menuList = document.getElementById('menu-list');
