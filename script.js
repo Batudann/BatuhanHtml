@@ -1,15 +1,14 @@
 // Firebase Ayarları
 const firebaseConfig = {
-  apiKey: "AIzaSyChL5ipjYz22N1Ds2zEEvNw_rk3gi8HUew",
-  authDomain: "oozusta-dbd64.firebaseapp.com",
-  databaseURL: "https://oozusta-dbd64-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "oozusta-dbd64",
-  storageBucket: "oozusta-dbd64.firebasestorage.app",
-  messagingSenderId: "1051302970649",
-  appId: "1:1051302970649:web:0c69394be08e8230c7f188",
-  measurementId: "G-VXXHS8MF46"
+  apiKey: "AIzaSyCywSoT8L0hOcVAMyfwMKySogGp75fsEDA",
+  authDomain: "oozusta-c2947.firebaseapp.com",
+  databaseURL: "https://oozusta-c2947-default-rtdb.firebaseio.com",
+  projectId: "oozusta-c2947",
+  storageBucket: "oozusta-c2947.firebasestorage.app",
+  messagingSenderId: "343190328587",
+  appId: "1:343190328587:web:26e103e0dacce9ecfbfe0e",
+  measurementId: "G-QH3NKRHTBV"
 };
-
 // Firebase'i Başlat
 firebase.initializeApp(firebaseConfig);
 const database = typeof firebase.database === 'function' ? firebase.database() : null;
